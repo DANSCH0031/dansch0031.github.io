@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Card Deck</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="nav">
+    <div class="nav-inner">
+      <div class="nav-brand">G&amp;D</div>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+      <nav class="nav-links" id="nav-links">
+        <a href="#info">Information</a>
+        <a href="#rsvp">RSVP</a>
+        <a href="#faqs">FAQs</a>
+        <a href="#contact">Contact</a>
+        <a href="#schedule">Schedule</a>
+      </nav>
+    </div>
+  </header>
+  <main class="deck">
+    <div class="card-stack">
+      <article class="card is-active" data-index="0" id="info">
+        <div class="card-logo">G&amp;D</div>
+        <h2>Information</h2>
+        <div class="card-body">
+          <div class="info-images">
+            <figure class="info-figure">
+              <img class="info-image" src="sternberg.jpg" alt="Pfarrhaus Sternberg">
+              <figcaption>Pfarrhaus Sternberg</figcaption>
+            </figure>
+            <figure class="info-figure">
+              <img class="info-image" src="inselhotel.jpg" alt="Inselhotel Faaker See">
+              <figcaption>Inselhotel Faaker See</figcaption>
+              <a class="info-link" href="https://inselhotel.at" target="_blank" rel="noopener">Visit website</a>
+            </figure>
+          </div>
+        </div>
+      </article>
+      <article class="card" data-index="1" id="rsvp">
+        <div class="card-logo">G&amp;D</div>
+        <h2>RSVP</h2>
+        <div class="card-body">
+          <p>Share attendance details and confirm your spot.</p>
+        </div>
+      </article>
+      <article class="card" data-index="2" id="faqs">
+        <div class="card-logo">G&amp;D</div>
+        <h2>FAQs</h2>
+        <div class="card-body">
+          <p>Common questions answered in one place.</p>
+        </div>
+      </article>
+      <article class="card" data-index="3" id="contact">
+        <div class="card-logo">G&amp;D</div>
+        <h2>Contact Us</h2>
+        <div class="card-body">
+          <p>Reach out for support or special requests.</p>
+          <form class="contact-form" action="mailto:schoellenberger@me.com" method="post" enctype="text/plain">
+            <button class="contact-button" type="submit">Email us</button>
+          </form>
+        </div>
+      </article>
+      <article class="card" data-index="4" id="schedule">
+        <div class="card-logo">G&amp;D</div>
+        <h2>Schedule</h2>
+        <div class="card-body">
+          <p>Timeline of activities and key moments.</p>
+        </div>
+      </article>
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
