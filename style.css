@@ -107,13 +107,35 @@ body, html {
   height: 520px;
 }
 
+.mountain-frame {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: auto;
+  display: block;
+  pointer-events: none;
+}
+
+.mountain-frame .mountain-shape {
+  pointer-events: visiblePainted;
+  cursor: pointer;
+}
+
+.mountain-frame:nth-child(1) { z-index: 5; }
+.mountain-frame:nth-child(2) { z-index: 4; }
+.mountain-frame:nth-child(3) { z-index: 3; }
+.mountain-frame:nth-child(4) { z-index: 2; }
+.mountain-frame:nth-child(5) { z-index: 1; }
+
 .card {
   position: absolute;
   inset: 0;
   padding: 34px 28px;
-  border-radius: 26px;
-  background: var(--surface);
-  box-shadow: var(--shadow);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
   text-align: left;
   transform: translateY(0) scale(1);
   transition: box-shadow 0.25s ease;
@@ -123,6 +145,18 @@ body, html {
   flex-direction: column;
   overflow: hidden;
   will-change: transform;
+}
+
+.card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.card:not(.is-active) .card-logo,
+.card:not(.is-active) h2,
+.card:not(.is-active) .card-body {
+  opacity: 0;
+  visibility: hidden;
 }
 
 .card h2 {
@@ -200,7 +234,7 @@ body, html {
 }
 
 .card.is-active {
-  box-shadow: 0 30px 70px rgba(7, 16, 32, 0.28);
+  box-shadow: none;
   animation: card-breathe 5s ease-in-out infinite;
 }
 
@@ -255,7 +289,38 @@ body, html {
   cursor: pointer;
 }
 
-.card:nth-child(1) { background: #ffffff; }
+.card:nth-child(1)::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("Mountains1.svg");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: cover;
+  opacity: 0.5;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.card:nth-child(2)::after,
+.card:nth-child(3)::after,
+.card:nth-child(4)::after,
+.card:nth-child(5)::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: cover;
+  opacity: 0.5;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.card:nth-child(2)::after { background-image: url("Mountains2.svg"); }
+.card:nth-child(3)::after { background-image: url("Mountains3.svg"); }
+.card:nth-child(4)::after { background-image: url("Mountains4.svg"); }
+.card:nth-child(5)::after { background-image: url("Mountains 5.svg"); }
 .card:nth-child(2) { background: #f1f6ff; }
 .card:nth-child(3) { background: #fef4ea; }
 .card:nth-child(4) { background: #f3f8f4; }
@@ -331,6 +396,19 @@ body, html {
   .card {
     padding: 26px 20px;
     border-radius: 22px;
+  }
+
+  .mountain-frame {
+    width: 100%;
+    height: 100%;
+    left: 0;
+    right: 0;
+    transform: translateY(48%) scale(1.1, 2.05);
+    transform-origin: center bottom;
+  }
+
+  .mountain-frame:nth-child(1) {
+    transform: translateY(55%) scale(1.1, 2.05);
   }
 
   .card h2 {

@@ -1,43 +1,53 @@
-const cards = Array.from(document.querySelectorAll('.card'));
 const navLinks = Array.from(document.querySelectorAll('.nav-links a'));
 const navToggle = document.querySelector('.nav-toggle');
 const navList = document.querySelector('.nav-links');
 const deck = document.querySelector('.deck');
-let targetProgress = 0;
-let currentProgress = 0;
-let rafId = null;
+const mountainFrames = Array.from(document.querySelectorAll('.mountain-frame'));
 
-function layoutCards() {
-  const activeIndex = Math.round(currentProgress);
+let activeMountainIndex = -1;
 
-  cards.forEach((card, index) => {
-    const delta = index - currentProgress;
-    const offsetY = delta * 18;
-    const offsetX = delta * 10;
-    const scale = 1 - Math.min(Math.abs(delta) * 0.03, 0.12);
-    const rotate = delta * 2;
-    card.style.transform = `translate(${offsetX}px, ${offsetY}px) scale(${scale}) rotate(${rotate}deg)`;
-    card.style.opacity = '1';
-    card.style.zIndex = String(20 - Math.abs(index - activeIndex));
-    card.classList.toggle('is-active', index === activeIndex);
+const clampIndex = (value, min, max) => Math.min(Math.max(value, min), max);
+
+const setActiveMountain = (index) => {
+  if (!mountainFrames.length) return;
+  const nextIndex = clampIndex(index, 0, mountainFrames.length - 1);
+  if (nextIndex === activeMountainIndex) return;
+  activeMountainIndex = nextIndex;
+
+  mountainFrames.forEach((frame, frameIndex) => {
+    frame.style.zIndex = frameIndex === activeMountainIndex ? String(mountainFrames.length + 1) : '';
   });
-}
+};
 
-cards.forEach((card, index) => {
-  card.addEventListener('click', () => {
-    targetProgress = index;
-    startAnimation();
+const onMountainScroll = () => {
+  if (!deck || !mountainFrames.length) return;
+  const deckTop = deck.offsetTop;
+  const deckHeight = deck.offsetHeight;
+  const scrollRange = Math.max(deckHeight - window.innerHeight, 1);
+  const progress = Math.min(Math.max((window.scrollY - deckTop) / scrollRange, 0), 1);
+  const nextIndex = Math.round(progress * (mountainFrames.length - 1));
+  setActiveMountain(nextIndex);
+};
+
+const initMountains = () => {
+  if (!mountainFrames.length) return;
+
+  mountainFrames.forEach((frame, index) => {
+    const shape = frame.querySelector('.mountain-shape') || frame;
+    shape.addEventListener('click', (event) => {
+      event.stopPropagation();
+      setActiveMountain(index);
+    });
   });
-});
+
+  window.addEventListener('scroll', onMountainScroll, { passive: true });
+  window.addEventListener('resize', onMountainScroll);
+  onMountainScroll();
+};
 
 navLinks.forEach((link) => {
   link.addEventListener('click', (event) => {
     event.preventDefault();
-    const targetId = link.getAttribute('href')?.slice(1);
-    const targetCard = cards.find((card) => card.id === targetId);
-    if (!targetCard) return;
-    targetProgress = Number(targetCard.dataset.index) || 0;
-    startAnimation();
     if (navList && navToggle) {
       navList.classList.remove('is-open');
       navToggle.setAttribute('aria-expanded', 'false');
@@ -64,56 +74,4 @@ document.addEventListener('click', (event) => {
   }
 });
 
-cards.forEach((card) => {
-  const body = card.querySelector('.card-body');
-  if (!body) return;
-  body.addEventListener('wheel', (event) => {
-    const activeIndex = Math.round(currentProgress);
-    const isActive = Number(card.dataset.index) === activeIndex;
-    if (!isActive) return;
-
-    const atTop = body.scrollTop <= 0;
-    const atBottom = body.scrollTop + body.clientHeight >= body.scrollHeight - 1;
-
-    if (event.deltaY > 0 && atBottom && activeIndex < cards.length - 1) {
-      event.preventDefault();
-      targetProgress = activeIndex + 1;
-      startAnimation();
-    } else if (event.deltaY < 0 && atTop && activeIndex > 0) {
-      event.preventDefault();
-      targetProgress = activeIndex - 1;
-      startAnimation();
-    }
-  }, { passive: false });
-});
-
-function onScroll() {
-  if (!deck) return;
-  const deckTop = deck.offsetTop;
-  const deckHeight = deck.offsetHeight;
-  const scrollRange = Math.max(deckHeight - window.innerHeight, 1);
-  const progress = Math.min(Math.max((window.scrollY - deckTop) / scrollRange, 0), 1);
-  targetProgress = progress * (cards.length - 1);
-  startAnimation();
-}
-
-function startAnimation() {
-  if (rafId) return;
-  const tick = () => {
-    currentProgress += (targetProgress - currentProgress) * 0.12;
-    if (Math.abs(targetProgress - currentProgress) < 0.001) {
-      currentProgress = targetProgress;
-      rafId = null;
-      layoutCards();
-      return;
-    }
-    layoutCards();
-    rafId = window.requestAnimationFrame(tick);
-  };
-  rafId = window.requestAnimationFrame(tick);
-}
-
-layoutCards();
-window.addEventListener('resize', layoutCards);
-window.addEventListener('scroll', onScroll, { passive: true });
-onScroll();
+initMountains();
