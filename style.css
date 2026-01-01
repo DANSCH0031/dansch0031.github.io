@@ -53,6 +53,7 @@ body.story-modal-open {
   letter-spacing: 0.4px;
   font-family: var(--font-wedding);
   font-size: 1.25rem;
+  text-decoration: none;
 }
 
 .nav-links {
