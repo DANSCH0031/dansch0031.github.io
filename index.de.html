@@ -14,7 +14,13 @@
   <header class="nav">
     <div class="nav-inner">
       <div class="nav-brand">G&amp;D</div>
-      <nav class="nav-links" aria-label="Primary">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="sr-only">Menü</span>
+      </button>
+      <nav class="nav-links" id="primary-nav" aria-label="Primary">
         <a href="#home" data-mountain="0">Startseite</a>
         <a href="#story" data-mountain="1">Unsere Geschichte</a>
         <a href="#schedule" data-mountain="2">Zeitplan</a>
@@ -27,6 +33,7 @@
           <a class="is-active" href="index.de.html">DE</a>
         </span>
       </nav>
+      <div class="nav-overlay" aria-hidden="true"></div>
     </div>
   </header>
   <main class="deck" id="home">

@@ -5,6 +5,8 @@ const homeLink = document.querySelector('.nav-links a[href="#home"]');
 const mountainFrames = Array.from(document.querySelectorAll('.mountain-frame'));
 const rsvpButton = document.querySelector('.rsvp-button');
 const registerButtons = Array.from(document.querySelectorAll('.register-tabs button'));
+const navToggle = document.querySelector('.nav-toggle');
+const navOverlay = document.querySelector('.nav-overlay');
 
 let activeMountainIndex = -1;
 
@@ -86,6 +88,8 @@ navLinks.forEach((link) => {
     if (Number.isNaN(mountainIndex)) return;
     event.preventDefault();
     setActiveMountain(mountainIndex);
+    document.body.classList.remove('nav-open');
+    if (navToggle) navToggle.setAttribute('aria-expanded', 'false');
   });
 });
 
@@ -97,5 +101,19 @@ registerButtons.forEach((button) => {
     setActiveMountain(mountainIndex);
   });
 });
+
+if (navToggle) {
+  navToggle.addEventListener('click', () => {
+    const isOpen = document.body.classList.toggle('nav-open');
+    navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+}
+
+if (navOverlay) {
+  navOverlay.addEventListener('click', () => {
+    document.body.classList.remove('nav-open');
+    if (navToggle) navToggle.setAttribute('aria-expanded', 'false');
+  });
+}
 
 initMountains();
