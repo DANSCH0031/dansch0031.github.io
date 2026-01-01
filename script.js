@@ -1,7 +1,6 @@
-const navLinks = Array.from(document.querySelectorAll('.nav-links a'));
-const navToggle = document.querySelector('.nav-toggle');
-const navList = document.querySelector('.nav-links');
 const deck = document.querySelector('.deck');
+const navLinks = Array.from(document.querySelectorAll('.nav-links a[href^="#"]'));
+const homeLink = document.querySelector('.nav-links a[href="#home"]');
 const mountainFrames = Array.from(document.querySelectorAll('.mountain-frame'));
 
 let activeMountainIndex = -1;
@@ -45,33 +44,24 @@ const initMountains = () => {
   onMountainScroll();
 };
 
-navLinks.forEach((link) => {
-  link.addEventListener('click', (event) => {
+if (homeLink) {
+  homeLink.addEventListener('click', (event) => {
     event.preventDefault();
-    if (navList && navToggle) {
-      navList.classList.remove('is-open');
-      navToggle.setAttribute('aria-expanded', 'false');
+    setActiveMountain(0);
+    const homeTarget = document.getElementById('home');
+    if (homeTarget) {
+      homeTarget.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
-  });
-});
-
-if (navToggle && navList) {
-  navToggle.addEventListener('click', () => {
-    const isOpen = navList.classList.toggle('is-open');
-    navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
   });
 }
 
-document.addEventListener('click', (event) => {
-  if (!navList || !navToggle) return;
-  const target = event.target;
-  if (!(target instanceof Element)) return;
-  const isToggle = navToggle.contains(target);
-  const isMenu = navList.contains(target);
-  if (!isToggle && !isMenu && navList.classList.contains('is-open')) {
-    navList.classList.remove('is-open');
-    navToggle.setAttribute('aria-expanded', 'false');
-  }
+navLinks.forEach((link) => {
+  link.addEventListener('click', (event) => {
+    const mountainIndex = Number(link.dataset.mountain);
+    if (Number.isNaN(mountainIndex)) return;
+    event.preventDefault();
+    setActiveMountain(mountainIndex);
+  });
 });
 
 initMountains();
