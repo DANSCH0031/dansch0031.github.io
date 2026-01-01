@@ -159,6 +159,34 @@ body, html {
   line-height: 1.5;
 }
 
+.contact-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.contact-link {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.02em;
+  box-shadow: 0 10px 22px rgba(7, 16, 32, 0.18);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+.contact-link:hover {
+  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 0.18);
+  box-shadow: 0 14px 26px rgba(7, 16, 32, 0.24);
+}
+
 .faq-list {
   margin: 6px 0 0 18px;
   padding: 0;
@@ -172,6 +200,11 @@ body, html {
   width: min(100%, 1100px);
   margin: 0 auto;
   height: clamp(360px, 55vw, 620px);
+  --mountain-transform: translateY(6%);
+  --mountain-scale: 0.985;
+  --mountain-scale-active: 1.02;
+  --register-bg: rgba(14, 33, 58, 0.85);
+  --register-active: rgba(255, 255, 255, 0.9);
 }
 
 .rsvp-button {
@@ -179,7 +212,7 @@ body, html {
   left: 50%;
   bottom: 8%;
   transform: translateX(-50%);
-  z-index: 6;
+  z-index: 10;
   padding: 12px 26px;
   border-radius: 999px;
   background: rgba(41, 60, 89, 0.9);
@@ -190,12 +223,54 @@ body, html {
   font-weight: 600;
   letter-spacing: 0.04em;
   box-shadow: 0 16px 30px rgba(7, 16, 32, 0.25);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.rsvp-button.is-visible {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .rsvp-button:hover {
   transform: translateX(-50%) translateY(-2px);
   box-shadow: 0 20px 36px rgba(7, 16, 32, 0.3);
+}
+
+.register-tabs {
+  position: absolute;
+  right: -18px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 12;
+}
+
+.register-tabs button {
+  border: none;
+  cursor: pointer;
+  padding: 10px 14px;
+  border-radius: 12px 0 0 12px;
+  font-family: "Space Grotesk", "Helvetica Neue", Arial, sans-serif;
+  font-weight: 600;
+  font-size: 0.82rem;
+  letter-spacing: 0.02em;
+  color: rgba(255, 255, 255, 0.8);
+  background: var(--register-bg);
+  box-shadow: 0 10px 24px rgba(7, 16, 32, 0.25);
+  transform: perspective(500px) rotateY(-6deg);
+  transform-origin: right center;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.register-tabs button.is-active {
+  background: var(--register-active);
+  color: #0c2035;
+  transform: perspective(500px) rotateY(0deg) translateX(4px);
+  box-shadow: 0 14px 30px rgba(7, 16, 32, 0.32);
 }
 
 .mountain-frame {
@@ -207,7 +282,8 @@ body, html {
   height: auto;
   display: block;
   pointer-events: none;
-  transform: translateY(6%);
+  transform: var(--mountain-transform) scale(var(--mountain-scale));
+  transition: transform 0.45s ease;
 }
 
 .mountain-frame .mountain-shape {
@@ -261,17 +337,34 @@ body, html {
   pointer-events: none;
 }
 
+.card-stack .mountain-frame:first-of-type .mountain-text {
+  font-size: clamp(32px, 4vw, 54px);
+}
+
+.card-stack .mountain-frame:first-of-type .mountain-label {
+  display: none;
+}
+
 .mountain-frame:nth-child(1) { z-index: 5; }
 .mountain-frame:nth-child(2) { z-index: 4; }
 .mountain-frame:nth-child(3) { z-index: 3; }
 .mountain-frame:nth-child(4) { z-index: 2; }
 .mountain-frame:nth-child(5) { z-index: 1; }
 
+.card-stack.animate-mountains .mountain-frame {
+  transition: transform 0.45s ease;
+}
+
+.card-stack.animate-mountains .mountain-frame.is-active {
+  transform: var(--mountain-transform) scale(var(--mountain-scale-active));
+}
+
 
 @media (max-width: 520px) {
   .card-stack {
     height: 480px;
     top: 120px;
+    --mountain-transform: translateY(48%) scale(1.1, 2.05);
   }
 
   .deck {
@@ -283,12 +376,12 @@ body, html {
     height: 100%;
     left: 0;
     right: 0;
-    transform: translateY(48%) scale(1.1, 2.05);
+    transform: var(--mountain-transform);
     transform-origin: center bottom;
   }
 
-  .mountain-frame:nth-child(1) {
-    transform: translateY(55%) scale(1.1, 2.05);
+  .card-stack .mountain-frame:first-of-type {
+    --mountain-transform: translateY(55%) scale(1.1, 2.05);
   }
 
   .nav-inner {
@@ -297,6 +390,10 @@ body, html {
 
   .nav-links {
     justify-content: center;
+  }
+
+  .register-tabs {
+    display: none;
   }
 }
 
