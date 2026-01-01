@@ -182,6 +182,9 @@ if (galleryLinks.length) {
     activeGalleryIndex = nextIndex;
   };
 
+  let touchStartX = 0;
+  let touchStartY = 0;
+
   galleryLinks.forEach((link, index) => {
     link.addEventListener('click', (event) => {
       event.preventDefault();
@@ -199,6 +202,31 @@ if (galleryLinks.length) {
   nextBtn.addEventListener('click', (event) => {
     event.stopPropagation();
     showImageAt(activeGalleryIndex + 1);
+  });
+
+  lightbox.addEventListener('touchstart', (event) => {
+    if (!lightbox.classList.contains('is-open')) return;
+    const touch = event.touches[0];
+    if (!touch) return;
+    touchStartX = touch.clientX;
+    touchStartY = touch.clientY;
+  }, { passive: true });
+
+  lightbox.addEventListener('touchend', (event) => {
+    if (!lightbox.classList.contains('is-open')) return;
+    if (activeGalleryIndex === -1) return;
+    const touch = event.changedTouches[0];
+    if (!touch) return;
+    const deltaX = touch.clientX - touchStartX;
+    const deltaY = touch.clientY - touchStartY;
+    const minSwipe = 40;
+    if (Math.abs(deltaX) > minSwipe && Math.abs(deltaX) > Math.abs(deltaY)) {
+      if (deltaX > 0) {
+        showImageAt(activeGalleryIndex - 1);
+      } else {
+        showImageAt(activeGalleryIndex + 1);
+      }
+    }
   });
 
   document.addEventListener('keyup', (event) => {
