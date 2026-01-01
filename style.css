@@ -56,6 +56,13 @@ body.story-modal-open {
   text-decoration: none;
 }
 
+.nav-brand:link,
+.nav-brand:visited,
+.nav-brand:hover,
+.nav-brand:active {
+  text-decoration: none;
+}
+
 .nav-links {
   display: flex;
   flex-wrap: wrap;
