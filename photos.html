@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>G&D ∞ Photos</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Oswald:wght@500&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="nav">
+    <div class="nav-inner">
+      <div class="nav-brand">G&D</div>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="sr-only">Menu</span>
+      </button>
+      <nav class="nav-links" id="primary-nav" aria-label="Primary">
+        <a href="index.html#home">Home</a>
+        <a href="index.html#story">Our Story</a>
+        <a href="index.html#schedule">Schedule</a>
+        <a href="index.html#travel">Travel &amp; Stay</a>
+        <a href="index.html#rsvp">RSVP</a>
+        <a href="faqs.html">FAQs</a>
+        <a href="photos.html" class="is-active">Photos</a>
+        <span class="lang-toggle" aria-label="Language">
+          <a class="is-active" href="photos.html">EN</a>
+          <span class="lang-sep">/</span>
+          <a href="photos.de.html">DE</a>
+        </span>
+      </nav>
+      <div class="nav-overlay" aria-hidden="true"></div>
+    </div>
+  </header>
+
+  <main class="deck">
+    <section class="content-section">
+      <h1>Photo Highlights</h1>
+      <p style="color: rgba(255,255,255,0.85); max-width: 780px; margin: 12px auto 28px; line-height: 1.6;">
+        A few favorite moments. Tap to view larger.
+      </p>
+      <div class="gallery-grid">
+        <a class="gallery-card" href="Pictures/IMG_4325.jpeg">
+          <img src="Pictures/IMG_4325.jpeg" alt="Photo 1">
+        </a>
+        <a class="gallery-card" href="Pictures/IMG_4360.JPG">
+          <img src="Pictures/IMG_4360.JPG" alt="Photo 2">
+        </a>
+        <a class="gallery-card" href="Pictures/IMG_4656.jpeg">
+          <img src="Pictures/IMG_4656.jpeg" alt="Photo 3">
+        </a>
+        <a class="gallery-card" href="Pictures/IMG_5172.jpeg">
+          <img src="Pictures/IMG_5172.jpeg" alt="Photo 4">
+        </a>
+        <a class="gallery-card" href="Pictures/IMG_5884.jpeg">
+          <img src="Pictures/IMG_5884.jpeg" alt="Photo 5">
+        </a>
+        <a class="gallery-card" href="Pictures/IMG_6284.jpeg">
+          <img src="Pictures/IMG_6284.jpeg" alt="Photo 6">
+        </a>
+        <a class="gallery-card" href="Pictures/IMG_6285.jpeg">
+          <img src="Pictures/IMG_6285.jpeg" alt="Photo 7">
+        </a>
+        <a class="gallery-card" href="Pictures/IMG_6770.jpeg">
+          <img src="Pictures/IMG_6770.jpeg" alt="Photo 8">
+        </a>
+        <a class="gallery-card" href="Pictures/IMG_7848.jpeg">
+          <img src="Pictures/IMG_7848.jpeg" alt="Photo 9">
+        </a>
+        <a class="gallery-card" href="Pictures/IMG_9054.jpeg">
+          <img src="Pictures/IMG_9054.jpeg" alt="Photo 10">
+        </a>
+      </div>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
