@@ -24,8 +24,58 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cardo:ital@1&family=Great+Vibes&family=Inter:wght@200&family=Merriweather:wght@300&family=Oswald:wght@500&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <style>
+    .gate-overlay {
+      position: fixed;
+      inset: 0;
+      background: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+    .gate-panel {
+      display: grid;
+      gap: 0.75rem;
+      width: min(320px, 90vw);
+      font-family: "Space Grotesk", system-ui, sans-serif;
+      color: #1f2a37;
+    }
+    .gate-input {
+      border: 1px solid #cfd7df;
+      border-radius: 999px;
+      padding: 0.65rem 1rem;
+      font-size: 1rem;
+      letter-spacing: 0.04em;
+    }
+    .gate-button {
+      border: 0;
+      border-radius: 999px;
+      padding: 0.65rem 1rem;
+      background: #1f2a37;
+      color: #fff;
+      font-size: 0.95rem;
+      cursor: pointer;
+    }
+    .gate-hint {
+      font-size: 0.85rem;
+      color: #6b7280;
+    }
+    .is-locked #site-content {
+      display: none;
+    }
+  </style>
 </head>
 <body>
+  <div class="gate-overlay" data-gate>
+    <form class="gate-panel" data-gate-form>
+      <label for="gate-password">Password</label>
+      <input id="gate-password" class="gate-input" type="password" inputmode="numeric" autocomplete="off">
+      <button class="gate-button" type="submit">Enter</button>
+      <div class="gate-hint" data-gate-hint></div>
+    </form>
+  </div>
+  <div id="site-content">
   <header class="nav">
     <div class="nav-inner">
       <a class="nav-brand" href="index.html#home" aria-label="Back to home">G&amp;D</a>
@@ -128,5 +178,49 @@
     </div>
   </div>
   <script src="script.js"></script>
+  </div>
+  <script>
+    (function () {
+      var PASSWORD = "201085";
+      var STORAGE_KEY = "site-unlocked";
+      var body = document.body;
+      var gate = document.querySelector("[data-gate]");
+      var form = document.querySelector("[data-gate-form]");
+      var input = document.getElementById("gate-password");
+      var hint = document.querySelector("[data-gate-hint]");
+
+      function unlock() {
+        localStorage.setItem(STORAGE_KEY, "true");
+        body.classList.remove("is-locked");
+        if (gate) {
+          gate.remove();
+        }
+      }
+
+      if (localStorage.getItem(STORAGE_KEY) === "true") {
+        unlock();
+        return;
+      }
+
+      body.classList.add("is-locked");
+
+      if (form) {
+        form.addEventListener("submit", function (event) {
+          event.preventDefault();
+          if (!input) {
+            return;
+          }
+          if (input.value === PASSWORD) {
+            unlock();
+            return;
+          }
+          input.value = "";
+          if (hint) {
+            hint.textContent = "Incorrect password.";
+          }
+        });
+      }
+    })();
+  </script>
   </body>
 </html>
