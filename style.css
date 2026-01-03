@@ -767,6 +767,84 @@ body.story-modal-open {
   cursor: pointer;
 }
 
+.card-stack {
+  --mountain-1-top: #a2aaaa;
+  --mountain-1-mid: #cad4d5;
+  --mountain-1-bottom: #ffffff;
+  --mountain-2-top: #c7bebf;
+  --mountain-2-mid: #f9edef;
+  --mountain-2-bottom: #ffffff;
+  --mountain-3-top: #b09992;
+  --mountain-3-mid: #dcbfb7;
+  --mountain-3-bottom: #ffffff;
+  --mountain-4-top: #b6a092;
+  --mountain-4-mid: #e4c8b7;
+  --mountain-4-bottom: #ffffff;
+  --mountain-5-top: #976b5f;
+  --mountain-5-mid: #bd8677;
+  --mountain-5-bottom: #ffffff;
+}
+
+.mountain-frame:nth-of-type(1) .mountain-stop-top {
+  stop-color: var(--mountain-1-top);
+}
+
+.mountain-frame:nth-of-type(1) .mountain-stop-bottom {
+  stop-color: var(--mountain-1-bottom);
+}
+
+.mountain-frame:nth-of-type(1) .mountain-stop-mid {
+  stop-color: var(--mountain-1-mid);
+}
+
+.mountain-frame:nth-of-type(2) .mountain-stop-top {
+  stop-color: var(--mountain-2-top);
+}
+
+.mountain-frame:nth-of-type(2) .mountain-stop-bottom {
+  stop-color: var(--mountain-2-bottom);
+}
+
+.mountain-frame:nth-of-type(2) .mountain-stop-mid {
+  stop-color: var(--mountain-2-mid);
+}
+
+.mountain-frame:nth-of-type(3) .mountain-stop-top {
+  stop-color: var(--mountain-3-top);
+}
+
+.mountain-frame:nth-of-type(3) .mountain-stop-bottom {
+  stop-color: var(--mountain-3-bottom);
+}
+
+.mountain-frame:nth-of-type(3) .mountain-stop-mid {
+  stop-color: var(--mountain-3-mid);
+}
+
+.mountain-frame:nth-of-type(4) .mountain-stop-top {
+  stop-color: var(--mountain-4-top);
+}
+
+.mountain-frame:nth-of-type(4) .mountain-stop-bottom {
+  stop-color: var(--mountain-4-bottom);
+}
+
+.mountain-frame:nth-of-type(4) .mountain-stop-mid {
+  stop-color: var(--mountain-4-mid);
+}
+
+.mountain-frame:nth-of-type(5) .mountain-stop-top {
+  stop-color: var(--mountain-5-top);
+}
+
+.mountain-frame:nth-of-type(5) .mountain-stop-bottom {
+  stop-color: var(--mountain-5-bottom);
+}
+
+.mountain-frame:nth-of-type(5) .mountain-stop-mid {
+  stop-color: var(--mountain-5-mid);
+}
+
 .mountain-frame .mountain-text {
   font-family: "Oswald", "Arial Narrow", sans-serif;
   font-size: clamp(40px, 5vw, 68px);
@@ -830,7 +908,7 @@ body.story-modal-open {
 }
 
 .card-stack .mountain-frame:nth-of-type(5) .mountain-shape {
-  fill: url(#mountain5Gradient);
+  fill: url(#mountainGradient5);
 }
 
 .mountain-frame:nth-child(1) { z-index: 5; }
