@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="{{lang}}">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>G&amp;D ∞</title>
+  <title>{{page_titles.faqs}}</title>
   <link rel="icon" href="G_3.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="G_3.svg">
   <link rel="manifest" href="manifest.json">
@@ -15,19 +15,19 @@
 <body>
   <header class="nav">
     <div class="nav-inner">
-      <a class="nav-brand" href="index.de.html#home" aria-label="Zur Startseite">G&amp;D</a>
+      <a class="nav-brand" href="{{paths.index}}#home" aria-label="{{nav.brand_aria}}">G&amp;D</a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
         <span class="nav-toggle-bar"></span>
         <span class="nav-toggle-bar"></span>
         <span class="nav-toggle-bar"></span>
-        <span class="sr-only">Menü</span>
+        <span class="sr-only">{{nav.menu}}</span>
       </button>
-      <nav class="nav-links" id="primary-nav" aria-label="Primary">
-        <a href="index.de.html#more">Zurück</a>
-        <span class="lang-toggle" aria-label="Language">
-          <a class="" href="faqs.de.html">EN</a>
+      <nav class="nav-links" id="primary-nav" aria-label="{{nav.primary_aria}}">
+        <a href="{{paths.index}}#more">{{nav.return}}</a>
+        <span class="lang-toggle" aria-label="{{nav.language}}">
+          <a class="{{lang_en_class}}" href="{{page.self_path}}">EN</a>
           <span class="lang-sep">/</span>
-          <a class="is-active" href="faqs.html">DE</a>
+          <a class="{{lang_de_class}}" href="{{page.alt_path}}">DE</a>
         </span>
       </nav>
       <div class="nav-overlay" aria-hidden="true"></div>
@@ -35,10 +35,10 @@
   </header>
   <main class="deck" id="home">
     <section class="content-section" id="faqs">
-      <h1>Häufig gestellte Fragen</h1>
+      <h1>{{faqs.title}}</h1>
 
       <div class="faq-section">
-        <h2>Logistik</h2>
+        <h2>{{faqs.sections.logistics}}</h2>
         <details class="faq-item">
           <summary>Where is the ceremony and reception?</summary>
           <div class="faq-answer">Both the ceremony and reception will take place at [Venue Name], located at [Full Address].</div>
@@ -62,7 +62,7 @@
       </div>
 
       <div class="faq-section">
-        <h2>Kleidung &amp; Dresscode</h2>
+        <h2>{{faqs.sections.attire}}</h2>
         <details class="faq-item">
           <summary>What is the dress code?</summary>
           <div class="faq-answer">The dress code is [Formal / Semi-Formal / Cocktail / Casual / Black Tie Optional].</div>
@@ -78,7 +78,7 @@
       </div>
 
       <div class="faq-section">
-        <h2>Zeitplan &amp; Events</h2>
+        <h2>{{faqs.sections.schedule}}</h2>
         <details class="faq-item">
           <summary>What is the schedule for the day?</summary>
           <div class="faq-answer">
@@ -100,7 +100,7 @@
       </div>
 
       <div class="faq-section">
-        <h2>Gäste, Plus-Ones &amp; Kinder</h2>
+        <h2>{{faqs.sections.guests}}</h2>
         <details class="faq-item">
           <summary>Can I bring a plus-one?</summary>
           <div class="faq-answer">Due to limited space, we can only accommodate guests listed on the invitation.</div>
@@ -116,7 +116,7 @@
       </div>
 
       <div class="faq-section">
-        <h2>Essen &amp; Getränke</h2>
+        <h2>{{faqs.sections.food}}</h2>
         <details class="faq-item">
           <summary>Will there be dinner at the reception?</summary>
           <div class="faq-answer">Yes, a [plated / buffet / family-style] dinner will be served.</div>
@@ -132,7 +132,7 @@
       </div>
 
       <div class="faq-section">
-        <h2>Fotos &amp; Handys</h2>
+        <h2>{{faqs.sections.photos}}</h2>
         <details class="faq-item">
           <summary>Is the ceremony unplugged?</summary>
           <div class="faq-answer">[Yes/No]. If yes, we kindly ask guests to refrain from using phones or cameras during the ceremony.</div>
@@ -148,7 +148,7 @@
       </div>
 
       <div class="faq-section">
-        <h2>Geschenke &amp; Registry</h2>
+        <h2>{{faqs.sections.gifts}}</h2>
         <details class="faq-item">
           <summary>Where are you registered?</summary>
           <div class="faq-answer">Registry details can be found on the Registry page of this website.</div>
@@ -164,7 +164,7 @@
       </div>
 
       <div class="faq-section">
-        <h2>Reise &amp; Sonstiges</h2>
+        <h2>{{faqs.sections.travel}}</h2>
         <details class="faq-item">
           <summary>Which airport should I fly into?</summary>
           <div class="faq-answer">The closest airport is [Airport Name].</div>

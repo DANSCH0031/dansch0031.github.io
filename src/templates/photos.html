@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{lang}}">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>G&amp;D ∞ Photos</title>
+  <title>{{page_titles.photos}}</title>
   <link rel="icon" href="G_3.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="G_3.svg">
   <link rel="manifest" href="manifest.json">
@@ -15,19 +15,19 @@
 <body>
   <header class="nav">
     <div class="nav-inner">
-      <a class="nav-brand" href="index.html#home" aria-label="Back to home">G&amp;D</a>
+      <a class="nav-brand" href="{{paths.index}}#home" aria-label="{{nav.brand_aria}}">G&amp;D</a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
         <span class="nav-toggle-bar"></span>
         <span class="nav-toggle-bar"></span>
         <span class="nav-toggle-bar"></span>
-        <span class="sr-only">Menu</span>
+        <span class="sr-only">{{nav.menu}}</span>
       </button>
-      <nav class="nav-links" id="primary-nav" aria-label="Primary">
-        <a href="index.html#more">Return</a>
-        <span class="lang-toggle" aria-label="Language">
-          <a class="is-active" href="photos.html">EN</a>
+      <nav class="nav-links" id="primary-nav" aria-label="{{nav.primary_aria}}">
+        <a href="{{paths.index}}#more">{{nav.return}}</a>
+        <span class="lang-toggle" aria-label="{{nav.language}}">
+          <a class="{{lang_en_class}}" href="{{page.self_path}}">EN</a>
           <span class="lang-sep">/</span>
-          <a class="" href="photos.de.html">DE</a>
+          <a class="{{lang_de_class}}" href="{{page.alt_path}}">DE</a>
         </span>
       </nav>
       <div class="nav-overlay" aria-hidden="true"></div>
@@ -35,40 +35,40 @@
   </header>
   <main class="deck">
     <section class="content-section">
-      <h1>Photo Highlights</h1>
+      <h1>{{photos.title}}</h1>
       <p style="color: rgba(255,255,255,0.85); max-width: 780px; margin: 12px auto 28px; line-height: 1.6;">
-        A few favorite moments. Tap to view larger.
+        {{photos.intro}}
       </p>
       <div class="gallery-grid">
         <a class="gallery-card" href="Pictures/IMG_4325.jpeg">
-          <img src="Pictures/IMG_4325.jpeg" alt="Photo 1">
+          <img src="Pictures/IMG_4325.jpeg" alt="{{photos.alt_prefix}} 1">
         </a>
         <a class="gallery-card" href="Pictures/IMG_4360.JPG">
-          <img src="Pictures/IMG_4360.JPG" alt="Photo 2">
+          <img src="Pictures/IMG_4360.JPG" alt="{{photos.alt_prefix}} 2">
         </a>
         <a class="gallery-card" href="Pictures/IMG_4656.jpeg">
-          <img src="Pictures/IMG_4656.jpeg" alt="Photo 3">
+          <img src="Pictures/IMG_4656.jpeg" alt="{{photos.alt_prefix}} 3">
         </a>
         <a class="gallery-card" href="Pictures/IMG_5172.jpeg">
-          <img src="Pictures/IMG_5172.jpeg" alt="Photo 4">
+          <img src="Pictures/IMG_5172.jpeg" alt="{{photos.alt_prefix}} 4">
         </a>
         <a class="gallery-card" href="Pictures/IMG_5884.jpeg">
-          <img src="Pictures/IMG_5884.jpeg" alt="Photo 5">
+          <img src="Pictures/IMG_5884.jpeg" alt="{{photos.alt_prefix}} 5">
         </a>
         <a class="gallery-card" href="Pictures/IMG_6284.jpeg">
-          <img src="Pictures/IMG_6284.jpeg" alt="Photo 6">
+          <img src="Pictures/IMG_6284.jpeg" alt="{{photos.alt_prefix}} 6">
         </a>
         <a class="gallery-card" href="Pictures/IMG_6285.jpeg">
-          <img src="Pictures/IMG_6285.jpeg" alt="Photo 7">
+          <img src="Pictures/IMG_6285.jpeg" alt="{{photos.alt_prefix}} 7">
         </a>
         <a class="gallery-card" href="Pictures/IMG_6770.jpeg">
-          <img src="Pictures/IMG_6770.jpeg" alt="Photo 8">
+          <img src="Pictures/IMG_6770.jpeg" alt="{{photos.alt_prefix}} 8">
         </a>
         <a class="gallery-card" href="Pictures/IMG_7848.jpeg">
-          <img src="Pictures/IMG_7848.jpeg" alt="Photo 9">
+          <img src="Pictures/IMG_7848.jpeg" alt="{{photos.alt_prefix}} 9">
         </a>
         <a class="gallery-card" href="Pictures/IMG_9054.jpeg">
-          <img src="Pictures/IMG_9054.jpeg" alt="Photo 10">
+          <img src="Pictures/IMG_9054.jpeg" alt="{{photos.alt_prefix}} 10">
         </a>
       </div>
     </section>
