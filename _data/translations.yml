@@ -1,0 +1,183 @@
+site:
+  title: "G&amp;D ∞"
+  canonical: "https://gwyneth-and-daniel-forever.com/"
+  og_image: "https://gwyneth-and-daniel-forever.com/og-preview.png"
+  og_image_width: "2048"
+  og_image_height: "1024"
+  twitter_card: "summary_large_image"
+  rsvp_url: "https://gwyneth-and-daniel.wedsites.com/rsvp"
+
+en:
+  paths:
+    index: "index.html"
+    faqs: "faqs.html"
+    photos: "photos.html"
+  meta:
+    description: "Gwyneth and Daniel are getting married in Austria on April 24, 2027."
+  nav:
+    brand_aria: "Back to home"
+    menu: "Menu"
+    primary_aria: "Primary"
+    language: "Language"
+    return: "Return"
+  sections:
+    home: "Home"
+    story: "Our Story"
+    schedule: "Schedule"
+    travel: "Travel &amp; Stay"
+    more: "More"
+  rsvp_text: "RSVP by Sept. 24th 2026"
+  mountain_labels:
+    home: "Home"
+    story: "Please click on button to read more"
+    schedule: "Schedule"
+    travel: "Travel &amp; Stay"
+    more: "More"
+  tabs:
+    aria: "Sections"
+    home: "Home"
+    story: "Our Story"
+    schedule: "Schedule"
+    travel: "Travel &amp; Stay"
+    more: "More"
+  more:
+    aria: "More links"
+    faq_desc: "Your questions, answered with care — dip into the FAQs."
+    faq_link: "FAQs"
+    photos_desc: "Browse our moments and soak in the photos we love."
+    photos_link: "Photos"
+  story_buttons:
+    met: "How We Met"
+    proposal: "Our Proposal"
+  story_modal:
+    close_aria: "Close story modal"
+  gate:
+    enabled: true
+    password: "201085"
+    label: "Password"
+    button: "Enter"
+    hint_error: "Incorrect password."
+  mountains:
+    one:
+      use_gradient: true
+      gradient_id: "mountainGradient1"
+      fill: "url(#mountainGradient1)"
+    two:
+      use_gradient: true
+      gradient_id: "mountainGradient2"
+      fill: "url(#mountainGradient2)"
+    three:
+      use_gradient: true
+      gradient_id: "mountainGradient3"
+      fill: "url(#mountainGradient3)"
+    four:
+      use_gradient: true
+      gradient_id: "mountainGradient4"
+      fill: "url(#mountainGradient4)"
+    five:
+      use_gradient: true
+      gradient_id: "mountainGradient5"
+      fill: "url(#mountainGradient5)"
+  page_titles:
+    faqs: "G&amp;D ∞"
+    photos: "G&amp;D ∞ Photos"
+  faqs:
+    title: "Frequently Asked Questions"
+    sections:
+      logistics: "Logistics"
+      attire: "Attire &amp; Dress Code"
+      schedule: "Schedule &amp; Events"
+      guests: "Guests, Plus-Ones &amp; Children"
+      food: "Food &amp; Drinks"
+      photos: "Photos &amp; Phones"
+      gifts: "Gifts &amp; Registry"
+      travel: "Travel &amp; Miscellaneous"
+  photos:
+    title: "Photo Highlights"
+    intro: "A few favorite moments. Tap to view larger."
+    alt_prefix: "Photo"
+
+de:
+  paths:
+    index: "index.de.html"
+    faqs: "faqs.de.html"
+    photos: "photos.de.html"
+  meta:
+    description: "Gwyneth und Daniel heiraten in Österreich am 24. April 2027."
+  nav:
+    brand_aria: "Zur Startseite"
+    menu: "Menü"
+    primary_aria: "Primary"
+    language: "Language"
+    return: "Zurück"
+  sections:
+    home: "Startseite"
+    story: "Unsere Geschichte"
+    schedule: "Zeitplan"
+    travel: "Reise &amp; Aufenthalt"
+    more: "More"
+  rsvp_text: "RSVP by Sept. 24th 2026"
+  mountain_labels:
+    home: "Startseite"
+    story: "Unsere Geschichte"
+    schedule: "Zeitplan"
+    travel: "Reise &amp; Aufenthalt"
+    more: "More"
+  tabs:
+    aria: "Abschnitte"
+    home: "Startseite"
+    story: "Unsere Geschichte"
+    schedule: "Zeitplan"
+    travel: "Reise &amp; Aufenthalt"
+    more: "More"
+  more:
+    aria: "Weitere Links"
+    faq_desc: "Hier findest du Antworten auf eure Fragen – schau in die FAQs."
+    faq_link: "FAQs"
+    photos_desc: "Stöbere durch unsere Lieblingsmomente in den Fotos."
+    photos_link: "Photos"
+  story_buttons:
+    met: "How We Met"
+    proposal: "Our Proposal"
+  story_modal:
+    close_aria: "Close story modal"
+  gate:
+    enabled: false
+    password: "201085"
+    label: "Password"
+    button: "Enter"
+    hint_error: "Incorrect password."
+  mountains:
+    one:
+      use_gradient: false
+      fill: "#97cce4"
+    two:
+      use_gradient: false
+      fill: "#6ba0b9"
+    three:
+      use_gradient: false
+      fill: "#60b3de"
+    four:
+      use_gradient: false
+      fill: "#004c75"
+    five:
+      use_gradient: false
+      fill: "#003a59"
+  page_titles:
+    faqs: "G&amp;D ∞"
+    photos: "G&amp;D ∞ Fotos"
+  faqs:
+    title: "Häufig gestellte Fragen"
+    sections:
+      logistics: "Logistik"
+      attire: "Kleidung &amp; Dresscode"
+      schedule: "Zeitplan &amp; Events"
+      guests: "Gäste, Plus-Ones &amp; Kinder"
+      food: "Essen &amp; Getränke"
+      photos: "Fotos &amp; Handys"
+      gifts: "Geschenke &amp; Registry"
+      travel: "Reise &amp; Sonstiges"
+  photos:
+    title: "Foto-Highlights"
+    intro: "Ein paar unserer Lieblingsmomente. Tippe zum Vergrößern."
+    alt_prefix: "Foto"

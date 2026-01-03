@@ -1,0 +1,30 @@
+{% assign t_en = site.data.translations.en %}
+{% assign t_de = site.data.translations.de %}
+<header class="nav">
+  <div class="nav-inner">
+    <a class="nav-brand" href="{{ t.paths.index }}#home" aria-label="{{ t.nav.brand_aria }}">G&amp;D</a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+      <span class="sr-only">{{ t.nav.menu }}</span>
+    </button>
+    <nav class="nav-links" id="primary-nav" aria-label="{{ t.nav.primary_aria }}">
+      {% if include.variant == "index" %}
+        <a href="#home" data-mountain="0">{{ t.sections.home }}</a>
+        <a href="#story" data-mountain="1">{{ t.sections.story }}</a>
+        <a href="#schedule" data-mountain="2">{{ t.sections.schedule }}</a>
+        <a href="#travel" data-mountain="3">{{ t.sections.travel }}</a>
+        <a href="#more" data-mountain="4">{{ t.sections.more }}</a>
+      {% else %}
+        <a href="{{ t.paths.index }}#more">{{ t.nav.return }}</a>
+      {% endif %}
+      <span class="lang-toggle" aria-label="{{ t.nav.language }}">
+        <a class="{% if page.lang == "en" %}is-active{% endif %}" href="{{ t_en.paths[page.translation_key] }}">EN</a>
+        <span class="lang-sep">/</span>
+        <a class="{% if page.lang == "de" %}is-active{% endif %}" href="{{ t_de.paths[page.translation_key] }}">DE</a>
+      </span>
+    </nav>
+    <div class="nav-overlay" aria-hidden="true"></div>
+  </div>
+</header>

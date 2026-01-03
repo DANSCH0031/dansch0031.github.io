@@ -1,197 +1,152 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>G&amp;D ∞</title>
-  <link rel="icon" href="G_3.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="G_3.svg">
-  <link rel="manifest" href="manifest.json">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Oswald:wght@500&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <header class="nav">
-    <div class="nav-inner">
-      <a class="nav-brand" href="index.de.html#home" aria-label="Zur Startseite">G&amp;D</a>
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
-        <span class="nav-toggle-bar"></span>
-        <span class="nav-toggle-bar"></span>
-        <span class="nav-toggle-bar"></span>
-        <span class="sr-only">Menü</span>
-      </button>
-      <nav class="nav-links" id="primary-nav" aria-label="Primary">
-        <a href="index.de.html#more">Zurück</a>
-        <span class="lang-toggle" aria-label="Language">
-          <a href="faqs.html">EN</a>
-          <span class="lang-sep">/</span>
-          <a class="is-active" href="faqs.de.html">DE</a>
-        </span>
-      </nav>
-      <div class="nav-overlay" aria-hidden="true"></div>
+---
+layout: page
+lang: de
+translation_key: faqs
+---
+<main class="deck" id="home">
+  <section class="content-section" id="faqs">
+    <h1>{{ t.faqs.title }}</h1>
+
+    <div class="faq-section">
+      <h2>{{ t.faqs.sections.logistics }}</h2>
+      <details class="faq-item">
+        <summary>Where is the ceremony and reception?</summary>
+        <div class="faq-answer">Both the ceremony and reception will take place at [Venue Name], located at [Full Address].</div>
+      </details>
+      <details class="faq-item">
+        <summary>What time should I arrive?</summary>
+        <div class="faq-answer">Please arrive 15-30 minutes early. The ceremony will begin promptly at [Time].</div>
+      </details>
+      <details class="faq-item">
+        <summary>Will the wedding be indoors or outdoors?</summary>
+        <div class="faq-answer">The ceremony will be [indoors/outdoors], and the reception will be [indoors/outdoors].</div>
+      </details>
+      <details class="faq-item">
+        <summary>Is parking available at the venue?</summary>
+        <div class="faq-answer">[Yes/No]. If yes, parking details are [onsite parking / valet / street parking].</div>
+      </details>
+      <details class="faq-item">
+        <summary>Will transportation be provided?</summary>
+        <div class="faq-answer">[Yes/No]. If yes, transportation details will be shared closer to the wedding date.</div>
+      </details>
     </div>
-  </header>
-  <main class="deck" id="home">
-    <section class="content-section" id="faqs">
-      <h1>Häufig gestellte Fragen</h1>
 
-      <div class="faq-section">
-        <h2>Logistik</h2>
-        <details class="faq-item">
-          <summary>Where is the ceremony and reception?</summary>
-          <div class="faq-answer">Both the ceremony and reception will take place at [Venue Name], located at [Full Address].</div>
-        </details>
-        <details class="faq-item">
-          <summary>What time should I arrive?</summary>
-          <div class="faq-answer">Please arrive 15-30 minutes early. The ceremony will begin promptly at [Time].</div>
-        </details>
-        <details class="faq-item">
-          <summary>Will the wedding be indoors or outdoors?</summary>
-          <div class="faq-answer">The ceremony will be [indoors/outdoors], and the reception will be [indoors/outdoors].</div>
-        </details>
-        <details class="faq-item">
-          <summary>Is parking available at the venue?</summary>
-          <div class="faq-answer">[Yes/No]. If yes, parking details are [onsite parking / valet / street parking].</div>
-        </details>
-        <details class="faq-item">
-          <summary>Will transportation be provided?</summary>
-          <div class="faq-answer">[Yes/No]. If yes, transportation details will be shared closer to the wedding date.</div>
-        </details>
-      </div>
+    <div class="faq-section">
+      <h2>{{ t.faqs.sections.attire }}</h2>
+      <details class="faq-item">
+        <summary>What is the dress code?</summary>
+        <div class="faq-answer">The dress code is [Formal / Semi-Formal / Cocktail / Casual / Black Tie Optional].</div>
+      </details>
+      <details class="faq-item">
+        <summary>Are there any colors guests should avoid wearing?</summary>
+        <div class="faq-answer">We kindly ask guests to avoid wearing [white/ivory or other specified colors].</div>
+      </details>
+      <details class="faq-item">
+        <summary>Will any part of the wedding be outdoors?</summary>
+        <div class="faq-answer">Yes. Please consider weather, grass, and walking surfaces when choosing attire and footwear.</div>
+      </details>
+    </div>
 
-      <div class="faq-section">
-        <h2>Kleidung &amp; Dresscode</h2>
-        <details class="faq-item">
-          <summary>What is the dress code?</summary>
-          <div class="faq-answer">The dress code is [Formal / Semi-Formal / Cocktail / Casual / Black Tie Optional].</div>
-        </details>
-        <details class="faq-item">
-          <summary>Are there any colors guests should avoid wearing?</summary>
-          <div class="faq-answer">We kindly ask guests to avoid wearing [white/ivory or other specified colors].</div>
-        </details>
-        <details class="faq-item">
-          <summary>Will any part of the wedding be outdoors?</summary>
-          <div class="faq-answer">Yes. Please consider weather, grass, and walking surfaces when choosing attire and footwear.</div>
-        </details>
-      </div>
+    <div class="faq-section">
+      <h2>{{ t.faqs.sections.schedule }}</h2>
+      <details class="faq-item">
+        <summary>What is the schedule for the day?</summary>
+        <div class="faq-answer">
+          <ul class="faq-list">
+            <li>Ceremony: [Time]</li>
+            <li>Cocktail Hour: [Time]</li>
+            <li>Reception: [Time]</li>
+          </ul>
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary>Are there additional events we are invited to?</summary>
+        <div class="faq-answer">[Yes/No]. If yes, details for additional events are listed on the Schedule page.</div>
+      </details>
+      <details class="faq-item">
+        <summary>What time will the reception end?</summary>
+        <div class="faq-answer">The reception will conclude at [Time].</div>
+      </details>
+    </div>
 
-      <div class="faq-section">
-        <h2>Zeitplan &amp; Events</h2>
-        <details class="faq-item">
-          <summary>What is the schedule for the day?</summary>
-          <div class="faq-answer">
-            <ul class="faq-list">
-              <li>Ceremony: [Time]</li>
-              <li>Cocktail Hour: [Time]</li>
-              <li>Reception: [Time]</li>
-            </ul>
-          </div>
-        </details>
-        <details class="faq-item">
-          <summary>Are there additional events we are invited to?</summary>
-          <div class="faq-answer">[Yes/No]. If yes, details for additional events are listed on the Schedule page.</div>
-        </details>
-        <details class="faq-item">
-          <summary>What time will the reception end?</summary>
-          <div class="faq-answer">The reception will conclude at [Time].</div>
-        </details>
-      </div>
+    <div class="faq-section">
+      <h2>{{ t.faqs.sections.guests }}</h2>
+      <details class="faq-item">
+        <summary>Can I bring a plus-one?</summary>
+        <div class="faq-answer">Due to limited space, we can only accommodate guests listed on the invitation.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Is this a child-friendly wedding?</summary>
+        <div class="faq-answer">[Yes/No]. If no, we respectfully request this be an adults-only celebration.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Can I bring someone who was not listed on my invitation?</summary>
+        <div class="faq-answer">Unfortunately, we are unable to accommodate additional guests beyond those invited.</div>
+      </details>
+    </div>
 
-      <div class="faq-section">
-        <h2>Gäste, Plus-Ones &amp; Kinder</h2>
-        <details class="faq-item">
-          <summary>Can I bring a plus-one?</summary>
-          <div class="faq-answer">Due to limited space, we can only accommodate guests listed on the invitation.</div>
-        </details>
-        <details class="faq-item">
-          <summary>Is this a child-friendly wedding?</summary>
-          <div class="faq-answer">[Yes/No]. If no, we respectfully request this be an adults-only celebration.</div>
-        </details>
-        <details class="faq-item">
-          <summary>Can I bring someone who was not listed on my invitation?</summary>
-          <div class="faq-answer">Unfortunately, we are unable to accommodate additional guests beyond those invited.</div>
-        </details>
-      </div>
+    <div class="faq-section">
+      <h2>{{ t.faqs.sections.food }}</h2>
+      <details class="faq-item">
+        <summary>Will there be dinner at the reception?</summary>
+        <div class="faq-answer">Yes, a [plated / buffet / family-style] dinner will be served.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Will dietary restrictions be accommodated?</summary>
+        <div class="faq-answer">[Yes/No]. If yes, please let us know your dietary restrictions when you RSVP.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Will alcohol be served?</summary>
+        <div class="faq-answer">[Yes/No]. If yes, a selection of beer, wine, and cocktails will be available.</div>
+      </details>
+    </div>
 
-      <div class="faq-section">
-        <h2>Essen &amp; Getränke</h2>
-        <details class="faq-item">
-          <summary>Will there be dinner at the reception?</summary>
-          <div class="faq-answer">Yes, a [plated / buffet / family-style] dinner will be served.</div>
-        </details>
-        <details class="faq-item">
-          <summary>Can dietary restrictions or allergies be accommodated?</summary>
-          <div class="faq-answer">Yes. Please indicate any dietary needs when you RSVP.</div>
-        </details>
-        <details class="faq-item">
-          <summary>Will alcohol be served?</summary>
-          <div class="faq-answer">Yes, there will be a [full / limited / cash] bar.</div>
-        </details>
-      </div>
+    <div class="faq-section">
+      <h2>{{ t.faqs.sections.photos }}</h2>
+      <details class="faq-item">
+        <summary>Is the ceremony unplugged?</summary>
+        <div class="faq-answer">[Yes/No]. If yes, we kindly ask guests to refrain from using phones or cameras during the ceremony.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Will there be a photo booth?</summary>
+        <div class="faq-answer">[Yes/No]. If yes, there will be a photo booth available during the reception.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Will we be able to see professional photos?</summary>
+        <div class="faq-answer">Yes! We will share a gallery link after the wedding.</div>
+      </details>
+    </div>
 
-      <div class="faq-section">
-        <h2>Fotos &amp; Handys</h2>
-        <details class="faq-item">
-          <summary>Is the ceremony unplugged?</summary>
-          <div class="faq-answer">[Yes/No]. If yes, we kindly ask guests to refrain from using phones or cameras during the ceremony.</div>
-        </details>
-        <details class="faq-item">
-          <summary>Can I take photos during the ceremony?</summary>
-          <div class="faq-answer">We ask that guests enjoy the ceremony without phones so our photographer can capture the moment.</div>
-        </details>
-        <details class="faq-item">
-          <summary>Will photos be shared after the wedding?</summary>
-          <div class="faq-answer">Yes. A link to the wedding photos will be shared after the celebration.</div>
-        </details>
-      </div>
+    <div class="faq-section">
+      <h2>{{ t.faqs.sections.gifts }}</h2>
+      <details class="faq-item">
+        <summary>Where are you registered?</summary>
+        <div class="faq-answer">Registry details can be found on the Registry page of this website.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Is there a honeymoon fund?</summary>
+        <div class="faq-answer">[Yes/No]. If yes, you can contribute to our honeymoon fund on the Registry page.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Are gifts required?</summary>
+        <div class="faq-answer">Your presence is the best gift! If you would like to give something, please check our registry.</div>
+      </details>
+    </div>
 
-      <div class="faq-section">
-        <h2>Geschenke &amp; Registry</h2>
-        <details class="faq-item">
-          <summary>Where are you registered?</summary>
-          <div class="faq-answer">Registry details can be found on the Registry page of this website.</div>
-        </details>
-        <details class="faq-item">
-          <summary>Are gifts expected?</summary>
-          <div class="faq-answer">Your presence is the greatest gift. If you wish to give something, we truly appreciate it.</div>
-        </details>
-        <details class="faq-item">
-          <summary>Should gifts be brought to the wedding?</summary>
-          <div class="faq-answer">We kindly recommend shipping gifts directly to the address listed on the registry.</div>
-        </details>
-      </div>
-
-      <div class="faq-section">
-        <h2>Reise &amp; Sonstiges</h2>
-        <details class="faq-item">
-          <summary>Which airport should I fly into?</summary>
-          <div class="faq-answer">The closest airport is [Airport Name].</div>
-        </details>
-        <details class="faq-item">
-          <summary>Are hotel blocks available?</summary>
-          <div class="faq-answer">Yes. Hotel block information is listed on the Travel &amp; Stay page.</div>
-        </details>
-        <details class="faq-item">
-          <summary>What happens if it rains?</summary>
-          <div class="faq-answer">We have a backup plan in place, and the celebration will continue rain or shine.</div>
-        </details>
-        <details class="faq-item">
-          <summary>Who should I contact with questions on the wedding day?</summary>
-          <div class="faq-answer">
-            Please reach me directly at +1 236 330 1389 via call or text. Quick links:
-            <div class="contact-buttons">
-              <a class="contact-link contact-whatsapp" href="https://wa.me/12363301389?text=Hi%21%20I%20have%20a%20question%20about%20the%20wedding." target="_blank" rel="noopener">WhatsApp</a>
-              <a class="contact-link contact-telegram" href="https://t.me/share/url?url=tel%3A12363301389&text=Hi%21%20I%20have%20a%20question%20about%20the%20wedding." target="_blank" rel="noopener">Telegram</a>
-              <a class="contact-link contact-imessage" href="imessage://+12363301389">iMessage</a>
-              <a class="contact-link contact-sms" href="sms:+12363301389&body=Hi%21%20I%20have%20a%20question%20about%20the%20wedding.">SMS</a>
-            </div>
-          </div>
-        </details>
-      </div>
-    </section>
-  </main>
-  <script src="script.js"></script>
-</body>
-</html>
+    <div class="faq-section">
+      <h2>{{ t.faqs.sections.travel }}</h2>
+      <details class="faq-item">
+        <summary>Which airport should I fly into?</summary>
+        <div class="faq-answer">The closest airport is [Airport Name].</div>
+      </details>
+      <details class="faq-item">
+        <summary>Are there hotel blocks reserved?</summary>
+        <div class="faq-answer">[Yes/No]. If yes, we have reserved blocks at [Hotel Name] with a group rate.</div>
+      </details>
+      <details class="faq-item">
+        <summary>What are some nearby attractions?</summary>
+        <div class="faq-answer">Explore [local attractions], [restaurants], and [activities] near the venue.</div>
+      </details>
+    </div>
+  </section>
+</main>
